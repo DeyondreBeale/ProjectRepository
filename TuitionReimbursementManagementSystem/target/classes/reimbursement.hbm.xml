@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<!-- Any attributes here apply to the actual
+	SQL table. If you don't include them, then the name
+	will be assumed based on the field name in the Class -->
+	<class name="dev.beale.models.Reimbursement" table="reimbursements">
+	
+		<!-- 'name' attribute corresponds to the Java
+		field name. 'type' will let Hibernate know what
+		to convert the SQL type into for Java. 'column'
+		is to specify a column name in the SQL table -->
+	
+		<!-- id tag is for your Primary Key -->
+		<id name="id" type="int" column="r_id">
+			<generator class="identity" />
+		</id>
+		
+		<property name="Eid" type="int" not-null="true" column="e_id"/>
+		<property name="amount" type="int" column="amount"/>
+		<property name="supervisorApproved" type="boolean" column="supervisor_approved"/>
+		<property name="departHeadApproved" type="boolean" column="departmenthead_approved"/>
+		<property name="benCoApproved" type="boolean" column="coordinator_approved"/>
+		<property name="dateSubmitted" type="string" column="date_submitted"/>
+		<property name="timeRequirement" type="string" column="time_requirement"/>
+		<property name="autoApprove" type="boolean" column="auto_approved"/>
+		<property name="location" type="string" column="location"/>
+		<property name="description" type="string" column="description"/>
+		<property name="status" type="string" column="status"/>
+		<property name="gradeFormat" type="string" column="grade_format"/>
+		<property name="justification" type="string" column="justification"/>
+		<property name="fileAttachment" type="byte" column="file_attachment"/>
+		<property name="eventType" type="string" column="event_type"/>
+	
+	</class>
+
+</hibernate-mapping>
