@@ -7,7 +7,7 @@ public class Request {
 	private int Rid;
 	private String department;
 	private String reason;
-	private long dateSent;
+	private String dateSent;
 	private boolean urgent;
 	private boolean denied;
 
@@ -15,7 +15,7 @@ public class Request {
 		super();
 	}
 
-	public Request(int id, int eid, int rid, String department, String reason, long dateSent, boolean urgent,
+	public Request(int id, int eid, int rid, String department, String reason, String dateSent, boolean urgent,
 			boolean denied) {
 		super();
 		this.id = id;
@@ -28,7 +28,8 @@ public class Request {
 		this.denied = denied;
 	}
 
-	public Request(int eid, int rid, String department, String reason, long dateSent, boolean urgent, boolean denied) {
+	public Request(int eid, int rid, String department, String reason, String dateSent, boolean urgent,
+			boolean denied) {
 		super();
 		Eid = eid;
 		Rid = rid;
@@ -79,11 +80,11 @@ public class Request {
 		this.reason = reason;
 	}
 
-	public long getDateSent() {
+	public String getDateSent() {
 		return dateSent;
 	}
 
-	public void setDateSent(long dateSent) {
+	public void setDateSent(String dateSent) {
 		this.dateSent = dateSent;
 	}
 

@@ -36,6 +36,7 @@
 		<!-- Class Mappings -->
 		<mapping resource="employee.hbm.xml" />
 		<mapping resource="reimbursement.hbm.xml" />
+		<mapping resource="request.hbm.xml" />
 		
 	</session-factory>
 </hibernate-configuration>

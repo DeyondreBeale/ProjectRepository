@@ -38,27 +38,6 @@ public class ReimbursementRepoImpl implements ReimbursementRepo {
 		return a;
 	}
 
-	@SuppressWarnings("unchecked")
-	public List<Reimbursement> getAllReimbursements() {
-		Session sess = HibernateUtil.getSession();
-		log.info("Sets up and creates a list");
-		List<Reimbursement> Reimbursements = null;
-		try {
-			// SELECT * FROM Reimbursements
-			// HQL - wants you to be able to just use your Java Classes.
-			Reimbursements = sess.createQuery("FROM Reimbursement").list();
-
-		} catch (HibernateException e) {
-			log.error("Hibernate couldn't make a list");
-			e.printStackTrace();
-		} finally {
-			sess.close();
-			log.info("session closes");
-		}
-
-		return Reimbursements;
-	}
-
 	@SuppressWarnings({ "unchecked" })
 	@Override
 	public List<Reimbursement> getAllReimbursement(int id, int name) {
@@ -70,7 +49,9 @@ public class ReimbursementRepoImpl implements ReimbursementRepo {
 			case 1:
 				log.info("Sets up and creates a list");
 				try {
-					Reimbursements = sess.createQuery("FROM Reimbursement WHERE supervisor_approved = false").list();
+					Reimbursements = sess
+							.createQuery("FROM Reimbursement WHERE supervisor_approved = false AND status = 'pending'")
+							.list();
 
 				} catch (HibernateException e) {
 					log.error("Hibernate couldn't create the list");
@@ -85,7 +66,7 @@ public class ReimbursementRepoImpl implements ReimbursementRepo {
 				log.info("Sets up and creates a list");
 				try {
 					Reimbursements = sess.createQuery(
-							"FROM Reimbursement WHERE supervisor_approved = true AND departmenthead_approved = false")
+							"FROM Reimbursement WHERE supervisor_approved = true AND departmenthead_approved = false AND status = 'pending'")
 							.list();
 
 				} catch (HibernateException e) {
@@ -100,7 +81,7 @@ public class ReimbursementRepoImpl implements ReimbursementRepo {
 				log.info("Sets up and creates a list");
 				try {
 					Reimbursements = sess.createQuery(
-							"FROM Reimbursement WHERE supervisor_approved = true AND departmenthead_approved = true AND coordinator_approved = false")
+							"FROM Reimbursement WHERE supervisor_approved = true AND departmenthead_approved = true AND coordinator_approved = false AND status = 'pending' OR (file_attachment = 1 AND coordinator_approved = true AND status != 'approved')")
 							.list();
 
 				} catch (HibernateException e) {

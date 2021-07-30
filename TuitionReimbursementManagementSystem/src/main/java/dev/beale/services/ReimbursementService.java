@@ -12,8 +12,6 @@ public interface ReimbursementService {
 
 	public Reimbursement getReimbursement(int id, int rId);
 
-	public List<Reimbursement> getAllReimbursements();
-
 	public Reimbursement createReimbursement(Reimbursement m);
 
 	public Reimbursement updateReimbursement(Reimbursement change);

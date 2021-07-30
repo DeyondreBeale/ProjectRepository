@@ -75,22 +75,25 @@ public class EmployeeRepoImpl implements EmployeeRepo {
 	public Employee getEmployee(String name) {
 		Session sess = HibernateUtil.getSession();
 		Employee em = null;
-
 		try {
+			try {
 
-			Criteria crit = sess.createCriteria(Employee.class);
-			crit.add(Restrictions.eq("userName", name));
+				Criteria crit = sess.createCriteria(Employee.class);
+				crit.add(Restrictions.eq("userName", name));
 
 //			a = (Employee) crit.uniqueResult();			
-			if (crit.list().size() > 0)
-				em = (Employee) crit.list().get(0);
+				if (crit.list().size() > 0)
+					em = (Employee) crit.list().get(0);
 //			CriteriaQuery<Employee> crit = sess.getCriteriaBuilder().createQuery(Employee.class);
-			log.info("Getting the employee by name");
-		} catch (HibernateException e) {
-			log.error("couldn't get the employee by name");
-			e.printStackTrace();
-		} finally {
-			sess.close();
+				log.info("Getting the employee by name");
+			} catch (HibernateException e) {
+				log.error("couldn't get the employee by name");
+				e.printStackTrace();
+			} finally {
+				sess.close();
+			}
+		} catch (NumberFormatException e) {
+			em = null;
 		}
 
 		return em;

@@ -25,10 +25,6 @@ public class ReimbursementServiceImpl implements ReimbursementService {
 		return cd.getReimbursement(id, rId);
 	}
 
-	public List<Reimbursement> getAllReimbursements() {
-		return cd.getAllReimbursements();
-	}
-
 	public Reimbursement updateReimbursement(Reimbursement change) {
 		return cd.updateReimbursement(change);
 	}

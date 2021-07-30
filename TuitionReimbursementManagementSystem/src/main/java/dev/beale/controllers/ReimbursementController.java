@@ -101,7 +101,7 @@ public class ReimbursementController {
 
 	public Handler updateReimbursement = (context) -> {
 		Reimbursement r = gson.fromJson(context.body(), Reimbursement.class);
-		r.setId(Integer.parseInt(context.pathParam("id")));
+
 		log.info("Path 'id' to number");
 
 		r = rs.updateReimbursement(r);

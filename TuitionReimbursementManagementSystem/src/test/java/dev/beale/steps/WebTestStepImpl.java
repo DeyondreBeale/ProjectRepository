@@ -68,7 +68,7 @@ public class WebTestStepImpl {
 
 	@Then("^The User should be on the Contact Page$")
 	public void the_User_should_be_on_the_Contact_Page() {
-		assertEquals("Contact", driver.getTitle());
+		assertEquals("Requests", driver.getTitle());
 	}
 
 	@When("^The User clicks Log Out$")

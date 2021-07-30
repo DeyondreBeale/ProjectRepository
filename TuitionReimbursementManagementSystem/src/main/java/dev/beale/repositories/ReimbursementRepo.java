@@ -8,8 +8,6 @@ public interface ReimbursementRepo {
 
 	public Reimbursement createReimbursement(Reimbursement r);
 
-	public List<Reimbursement> getAllReimbursements();
-
 	public Reimbursement getReimbursement(int id);
 
 	public Reimbursement getReimbursement(int id, int rId);

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<!-- Any attributes here apply to the actual
+	SQL table. If you don't include them, then the name
+	will be assumed based on the field name in the Class -->
+	<class name="dev.beale.models.Request" table="requests">
+	
+		<!-- 'name' attribute corresponds to the Java
+		field name. 'type' will let Hibernate know what
+		to convert the SQL type into for Java. 'column'
+		is to specify a column name in the SQL table -->
+	
+		<!-- id tag is for your Primary Key -->
+		<id name="id" type="int" column="ir_id">
+			<generator class="identity" />
+		</id>
+		
+		<property name="Eid" type="int" column="employees_id"/>
+		<property name="Rid" type="int" not-null="true" column="r_id"/>
+		<property name="department" type="string" column="department"/>
+		<property name="reason" type="string" column="reason"/>
+		<property name="dateSent" type="string" column="date_sent"/>
+		<property name="urgent" type="boolean" column="urgent"/>
+		<property name="denied" type="boolean" column="denied"/>
+
+	
+	</class>
+
+</hibernate-mapping>

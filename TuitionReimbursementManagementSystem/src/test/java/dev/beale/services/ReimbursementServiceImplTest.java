@@ -75,18 +75,10 @@ public class ReimbursementServiceImplTest {
 	}
 
 	@Test
-	public void testGetAllReimbursements() {
-		ReimbursementRepo ad = new ReimbursementRepoImpl();
-		ReimbursementService es = new ReimbursementServiceImpl(ad);
-		List<Reimbursement> test = es.getAllReimbursements();
-		assertNotNull(test);
-	}
-
-	@Test
 	public void testGetAllReimbursementsIntInt() {
 		ReimbursementRepo ad = new ReimbursementRepoImpl();
 		ReimbursementService es = new ReimbursementServiceImpl(ad);
-		List<Reimbursement> test = es.getAllReimbursements();
+		List<Reimbursement> test = es.getAllReimbursements(1, -1);
 		assertNotNull(test);
 	}
 

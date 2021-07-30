@@ -69,16 +69,9 @@ public class ReimbursementRepoImplTest {
 	}
 
 	@Test
-	public void testGetAllReimbursements() {
-		ReimbursementRepo ad = new ReimbursementRepoImpl();
-		List<Reimbursement> test = ad.getAllReimbursements();
-		assertNotNull(test);
-	}
-
-	@Test
 	public void testGetAllReimbursementsIntInt() {
 		ReimbursementRepo ad = new ReimbursementRepoImpl();
-		List<Reimbursement> test = ad.getAllReimbursements();
+		List<Reimbursement> test = ad.getAllReimbursement(1, -1);
 		assertNotNull(test);
 	}
 

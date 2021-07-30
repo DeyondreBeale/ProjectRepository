@@ -4,14 +4,19 @@ import org.apache.log4j.Logger;
 
 import dev.beale.controllers.EmployeeController;
 import dev.beale.controllers.ReimbursementController;
+import dev.beale.controllers.RequestController;
 import dev.beale.repositories.EmployeeRepo;
 import dev.beale.repositories.EmployeeRepoImpl;
 import dev.beale.repositories.ReimbursementRepo;
 import dev.beale.repositories.ReimbursementRepoImpl;
+import dev.beale.repositories.RequestRepo;
+import dev.beale.repositories.RequestRepoImpl;
 import dev.beale.services.EmployeeService;
 import dev.beale.services.EmployeeServiceImpl;
 import dev.beale.services.ReimbursementService;
 import dev.beale.services.ReimbursementServiceImpl;
+import dev.beale.services.RequestService;
+import dev.beale.services.RequestServiceImpl;
 import io.javalin.Javalin;
 
 public class App {
@@ -43,6 +48,10 @@ public class App {
 		ReimbursementService rs = new ReimbursementServiceImpl(rr);
 		ReimbursementController rc = new ReimbursementController(rs);
 
+		RequestRepo rR = new RequestRepoImpl();
+		RequestService rS = new RequestServiceImpl(rR);
+		RequestController rC = new RequestController(rS);
+
 		er.getEmployee(0);
 		log.info("Started hibernate early with empty employee get");
 
@@ -54,15 +63,20 @@ public class App {
 		app.get("/Employees/:id", ec.getEmployeeById);
 
 		app.get("Employees/:id/Reimbursements", rc.getAllReimbursements);
+		app.get("Employees/:id/Requests", rC.getAllRequests);
 		app.get("/Reimbursements", rc.getAllReimbursements);
 		app.get("/Reimbursements/:id", rc.getReimbursementById);
+		app.get("/Requests/:id", rC.getRequestById);
+		app.get("/Requests", rC.getAllRequests);
 
 		app.post("/Employees", ec.createEmployee);
 		app.post("/Employees/:id/Reimbursements", rc.createReimbursement);
+		app.post("/Employees/:id/Requests", rC.createRequest);
 		app.post("/Employees/:id/Reimbursements/:rId", rc.updateReimbursement);
 
 		app.put("/Employees/:id", ec.updateEmployee);
 		app.put("/Reimbursements/:id", rc.updateReimbursement);
+		app.put("/Requests/:id", rC.updateRequest);
 
 		app.delete("/Employees/:id", ec.deleteEmployee);
 		app.delete("/Reimbursements/:id", rc.deleteReimbursement);
