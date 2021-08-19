@@ -30,13 +30,14 @@ To-do list:
 * Stylize the webpages a bit better
 
 ## Getting Started
-   
+Have SpringToolSuite installed
 use `git clone` for this repository
 
-- All the `code` required to get started
-
 ## Usage
+open the repository clone 
+open the SpringToolSuite code
+run the "app" section in the SpringToolSuite
+type `http://localhost:7000` in a browser
 
-> Here, you instruct other people on how to use your project after they’ve installed it. This would also be a good place to include screenshots of your project in action.
 
 
