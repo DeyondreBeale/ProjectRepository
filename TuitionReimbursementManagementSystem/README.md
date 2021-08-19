@@ -30,14 +30,14 @@ To-do list:
 * Stylize the webpages a bit better
 
 ## Getting Started
-Have SpringToolSuite installed
-use `git clone` for this repository
+* Have SpringToolSuite installed
+* use `git clone` for this repository
 
 ## Usage
-open the repository clone 
-open the SpringToolSuite code
-run the "app" section in the SpringToolSuite
-type `http://localhost:7000` in a browser
+* open the repository clone 
+* open the SpringToolSuite code
+* run the "app" section in the SpringToolSuite
+* type `http://localhost:7000` in a browser
 
 
 
