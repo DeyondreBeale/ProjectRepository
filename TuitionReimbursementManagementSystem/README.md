@@ -1,16 +1,42 @@
 # Tuition Reimbursement Management System
 
-TRMS, or Tuition Reimbursement Management System is a full-stack web application that allows employees to submit requests for reimbursements for courses, events, and certifications. These requests can then be approved or rejected by the employee's direct supervisor, department head, and a benefits coordinator while the employee is able to track the status of their requests.
+## Project Description
 
-Roles / Responsibilities 
-Create a front end webpage where users can traverse different possibilities and options.
-Have each user track where the request is at.
-Create a functional back end server for the CRUD functions.
- Create a database using PostgreSQL.
-Create tests with Postman, Selenium and Cucumber, and JUnit4.
-Create other functionality for the front end.
-Create a webpage to hold all the information.
-Create a database which stores all the data from the users.
+Tuition Reimbursement Management System, or TRMS, is a full-stack web application that allows employees to submit requests for reimbursements for courses, events, and certifications. These requests can then be approved or rejected by the employee's direct supervisor, department head, and a benefits coordinator while the employee is able to track the status of their requests.
 
-Environment / Technologies 
-Javalin, PostgreSQL, Java, JavaScript, HTML, CSS, Hibernate, JDBC, JUnit4, Selenium
+## Technologies Used
+
+* Javalin
+* PostgreSQL
+* Java
+* JavaScript
+* HTML
+* CSS
+* Hibernate
+* JDBC
+* JUnit4
+* Selenium
+* Cucumber
+
+## Features
+
+List of features ready and TODOs for future development
+* Can login as different users
+* Can create a request
+* Can send a request to other users
+
+To-do list:
+* Fix having to double click the buttons
+* Stylize the webpages a bit better
+
+## Getting Started
+   
+use `git clone` for this repository
+
+- All the `code` required to get started
+
+## Usage
+
+> Here, you instruct other people on how to use your project after they’ve installed it. This would also be a good place to include screenshots of your project in action.
+
+
